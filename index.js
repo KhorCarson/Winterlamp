@@ -19,6 +19,12 @@ bot.on('message', message=>{
         break;
       case 'hi':
                  message.channel.sendMessage('Hi, my friend!')
+        break;
+      case 'sup':
+                 message.channel.sendMessage('Hola!')
+        break;
+      case 'yo':
+                 message.channel.sendMessage('Hi!')
             break;
       case 'owner':
                 message.channel.sendMessage('Winterlamp is owned by Khor and Zapz. Feel free to send them a message!')
@@ -69,10 +75,13 @@ bot.on('message', message=>{
         
       case 'I':
         if (args[1] === 'love')
-        if (args[2] === 'you ')
+        if (args[2] === 'you'){
           message.channel.sendMessage("Awhh! That is so sweet of you!")
-
-        case 'dm':
+    }else{
+          message.channel.sendMessage('I am sorry but I do not know how to help with with that.')
+    }    
+        break;
+      case 'dm':
             message.channel.sendMessage('Done! A DM have been sent to your DM.')
             message.author.sendMessage('Hello! My epithet is Winterlamp. I was made by Khor and Zapz. I am equipped with a lot of fun and useful commands that may cheer you up! Type *-help* to get started')
             break;

@@ -16,8 +16,11 @@ bot.on('message', message=>{
     switch(args[0]){
         case 'hello':
                  message.channel.sendMessage('Hello!')
+        break;
+      case 'hi':
+                 message.channel.sendMessage('Hi, my friend!')
             break;
-        case 'owner': 'Owner';
+      case 'owner':
                 message.channel.sendMessage('Winterlamp is owned by Khor and Zapz. Feel free to send them a message!')
                 break;
         case 'bot':
@@ -36,14 +39,14 @@ bot.on('message', message=>{
             }
         break;
         case 'profile':
-            const embed = new Discord.RichEmbed()
+            const profile = new Discord.RichEmbed()
             .setTitle('**__Information__**')
             .addField('Name', message.author.username)
             .addField('Tag', message.author.tag)
-            .setDescription(message.author.avatarURL) 
+            .setThumbnail(message.author.avatarURL) 
             .setColor(0xF1C40F)
             .setTimestamp()
-            message.channel.sendEmbed(embed);
+            message.channel.sendEmbed(profile);
             break;
         case 'help':
             message.author.sendMessage('Winterlamp is a virtual assistant to talk to you when you are bored. The prefix to use Winterlamp is `-`. To use me, be sure that your command is all in small letter except "I" and does not have punctuation except if you are asking a question.')

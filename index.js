@@ -46,7 +46,7 @@ bot.on('message', message=>{
             message.channel.sendEmbed(embed);
             break;
         case 'help':
-            message.author.sendMessage('Winterlamp is a virtual assistant to talk to you when you are bored. The prefix to use Winterlamp is `-`. To use me, be sure that your command is all in small letter except "I" and does not have punctuation.')
+            message.author.sendMessage('Winterlamp is a virtual assistant to talk to you when you are bored. The prefix to use Winterlamp is `-`. To use me, be sure that your command is all in small letter except "I" and does not have punctuation except if you are asking a question.')
         break;
         case 'bye':
             message.channel.sendMessage('Awh. Bye!')

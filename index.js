@@ -84,9 +84,11 @@ bot.on('message', message=>{
       case 'dm':
             message.channel.sendMessage('Done! A DM have been sent to your DM.')
             message.author.sendMessage('Hello! My epithet is Winterlamp. I was made by Khor and Zapz. I am equipped with a lot of fun and useful commands that may cheer you up! Type *-help* to get started')
-            break;
+
+        break;
         
         };
     }
 )
+
 bot.login(token);

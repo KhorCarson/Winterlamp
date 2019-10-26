@@ -65,7 +65,9 @@ bot.on('message', message=>{
             break;
         
       case 'I':
-        if (args[1])
+        if (args[1] === 'love')
+        if (args[2] === 'you ')
+          message.channel.sendMessage("Awhh! That is so sweet of you!")
 
         case 'dm':
             message.channel.sendMessage('Done! A DM have been sent to your DM.')

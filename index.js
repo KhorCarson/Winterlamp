@@ -40,8 +40,8 @@ bot.on('message', message=>{
             .setTitle('**__Information__**')
             .addField('Name', message.author.username)
             .addField('Tag', message.author.tag)
+            .setDescription(message.author.avatarURL) 
             .setColor(0xF1C40F)
-            .setThumbnail(message.author.avatarURL)
             .setTimestamp()
             message.channel.sendEmbed(embed);
             break;

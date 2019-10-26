@@ -5,6 +5,8 @@ const token = 'NjM3MzAzNzcxMzkwODA0MDE2.XbMNfA.wxE3ROxUqwpXGPSoe-oNNqPyHsw';
 
 const PREFIX = '-';                                                                                                                                                                                                                                                                                                       
 
+const servers  = {};
+
 bot.on('ready', () =>{
     console.log('This bot is online and ready.');
 })
@@ -80,6 +82,20 @@ bot.on('message', message=>{
     }else{
           message.channel.sendMessage('I am sorry but I do not know how to help with with that.')
     }    
+        break;
+      case 'play':
+        if(!args[1]){
+          message.channel.send('Invalid. Link must be provided.')
+          return;
+        }
+        
+        if(!message.member.voiceChannel){
+          message.channel.send('Invalid. Try entering a voice channel');
+          return;
+        }
+        
+        
+      
         break;
       case 'dm':
             message.channel.sendMessage('Done! A DM have been sent to your DM.')

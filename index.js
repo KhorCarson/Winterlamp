@@ -85,9 +85,32 @@ setInterval(() => {
             message.author.sendMessage('Hello! My epithet is Winterlamp. I was made by Khor and Zapz. I am equipped with a lot of fun and useful commands that may cheer you up! Type `-help` to get started')
 
         break;
-        
+      
+      bot.on('messageCreate', async (msg) => {
+   const botWasMentioned = msg.mentions.find(
+       mentionedUser => mentionedUser.id === bot.user.id,
+   );
+        if (botWasMentioned) {
+       try {
+           await 
+           msg.channel.createMessage('Present');
+       } catch (err) {
+           // There are various reasons why sending a message may fail.
+           // The API might time out or choke and return a 5xx status,
+           // or the bot may not have permission to send the
+           // message (403 status).
+           console.warn('Failed to respond to mention.');
+           console.warn(err);
+       }
+   }
+});
+
+bot.on('error', err => {
+   console.warn(err)
+    
+  
         };
-    }
+    
 )
 
 bot.login(token);

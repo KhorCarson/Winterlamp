@@ -73,15 +73,7 @@ bot.on('message', message=>{
         }else{
             message.channel.sendMessage('I am sorry but I do not know how to help you with that.')
      }
-            break;
-        
-      case 'I':
-        if (args[1] === 'love')
-        if (args[2] === 'you'){
-          message.channel.sendMessage("Awhh! That is so sweet of you!")
-    }else{
-          message.channel.sendMessage('I am sorry but I do not know how to help with with that.')
-    }    
+            break
         break;
       case 'play':
         if(!args[1]){

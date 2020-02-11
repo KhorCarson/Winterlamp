@@ -15,7 +15,19 @@ bot.on('message', message=>{
     
     let args = message.content.substring(PREFIX.length).split(" ");
 
-    switch(args[0]){
+  const http = require('http');
+const express = require('express');
+const app = express();
+app.get("/", (request, response) => {
+  console.log(Date.now() + " Ping Received");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
+    
+  switch(args[0]){
         case 'hello':
                  message.channel.sendMessage('Hello!')
         break;
@@ -38,14 +50,7 @@ bot.on('message', message=>{
                 message.channel.sendMessage('Invalid command!')
             }
         break;
-        case 'how':
-            if(args[1] === 'are')
-            if(args[2] === 'you?'){
-                message.channel.sendMessage('Doing great, thanks for asking.')
-            }else{
-                   message.channel.sendMessage('I am sorry but I do not know how to help you with that.')
-            }
-        break;
+      
         case 'profile':
             const profile = new Discord.RichEmbed()
             .setTitle('**__Information__**')
@@ -72,26 +77,12 @@ bot.on('message', message=>{
             message.channel.sendMessage('Farewell. It was nice talking to you!')
         }else{
             message.channel.sendMessage('I am sorry but I do not know how to help you with that.')
-     }
-            break
-        break;
-      case 'play':
-        if(!args[1]){
-          message.channel.send('Invalid. Link must be provided.')
-          return;
-        }
-        
-        if(!message.member.voiceChannel){
-          message.channel.send('Invalid. Try entering a voice channel');
-          return;
-        }
-        
-        
+     }    
       
         break;
       case 'dm':
             message.channel.sendMessage('Done! A DM have been sent to your DM.')
-            message.author.sendMessage('Hello! My epithet is Winterlamp. I was made by Khor and Zapz. I am equipped with a lot of fun and useful commands that may cheer you up! Type *-help* to get started')
+            message.author.sendMessage('Hello! My epithet is Winterlamp. I was made by Khor and Zapz. I am equipped with a lot of fun and useful commands that may cheer you up! Type `-help` to get started')
 
         break;
         
